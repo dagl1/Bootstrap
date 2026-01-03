@@ -14,7 +14,7 @@ Required installations:
     - Verify installation by running `yarn -v` in your terminal.
 
 - Git
-- Download and install from https://git-scm.com/
+  - Download and install from https://git-scm.com/
   - Verify installation by running `git --version` in your terminal.
 
 
@@ -49,3 +49,4 @@ Required actions:
 
 
 ________________________________________________
+

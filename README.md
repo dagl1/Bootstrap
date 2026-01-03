@@ -25,7 +25,11 @@ Required actions:
   - Go to your GitHub account settings.
   - Navigate to "Developer settings" > "Personal access tokens".
   - Click on "Generate new token".
-  - Select the necessary scopes for your project (e.g., repo, workflow).
+  - Select the necessary scopes for your project (read & write access).
+    - Contents
+    - Issues
+    - Pull requests
+    - Any additional scopes, eg. workflows
   - Generate the token and copy it securely.
   - Set the token as an environment variable in your terminal:
     - On macOS/Linux: `export GITHUB_TOKEN=your_token_here`
@@ -42,5 +46,6 @@ Required actions:
   - In the project directory (preferably using git Bash):
 `./bootstrap.sh` (macOS/Linux) or `bootstrap.bat` (Windows terminal)
   - This script will install all necessary dependencies and set up the project environment.
+
 
 ________________________________________________

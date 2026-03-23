@@ -46,28 +46,26 @@ else
   echo "✅ npm available"
 fi
 
-# --------------------------------------
+ --------------------------------------
 # Initialize Python project
 # --------------------------------------
 if [ ! -f pyproject.toml ]; then
   echo "📦 Initializing uv project (Python 3.14)..."
   uv venv --python 3.14
   uv init
+  # --------------------------------------
+  # Merge pyproject bootstrap config
+  # --------------------------------------
+  BOOTSTRAP_FILE="bootstrap/pyproject_bootstrap.toml"
+
+  if [ -f "$BOOTSTRAP_FILE" ]; then
+    echo "🧩 Merging pyproject bootstrap config..."
+    cat "$BOOTSTRAP_FILE" >> pyproject.toml
+  else
+    echo "⚠️ $BOOTSTRAP_FILE not found, skipping merge"
+  fi
 else
   echo "ℹ️ pyproject.toml already exists"
-fi
-
-
-# --------------------------------------
-# Merge pyproject bootstrap config
-# --------------------------------------
-BOOTSTRAP_FILE="bootstrap/pyproject_bootstrap.toml"
-
-if [ -f "$BOOTSTRAP_FILE" ]; then
-  echo "🧩 Merging pyproject bootstrap config..."
-  cat "$BOOTSTRAP_FILE" >> pyproject.toml
-else
-  echo "⚠️ $BOOTSTRAP_FILE not found, skipping merge"
 fi
 
 # --------------------------------------
